@@ -39,7 +39,7 @@
       <div class="modal fade" id="add-item-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
-            <form id="add-recipe">
+            <form id="add-item">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">👀 adding new item :^0</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -71,7 +71,7 @@
 
     <script>
       var firebaseConfig = {
-        
+
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
@@ -99,11 +99,14 @@
             </div>`;
           });
         });
+    }).catch((error) => {
+      console.log("Error getting document:", error);
     });
+  
     
-    formElem.addEventListener('submit', (e) => {
+    document.getElementById("add-item").addEventListener('submit', (e) => {
       e.preventDefault();
-      formElem.reset();
+      document.getElementById("add-item").reset();
     });
     </script>
 
